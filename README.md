@@ -4,14 +4,15 @@ z powodu błędów literowych we wniosku. Aby odreagować postanowił udać się
 kina na *maraton filmowy poświęcony gwiezdnym bitwom*. Po powrocie zamierzał
 odnaleźć na nieużywanym dysku twardym swój autorski program do sprawdzania
 pisowni. W niewyjaśnionych okolicznościach na dysku znalazł się wirus o nazwie
-#42@ atakujący m.in. kody źródłowe programów napisanych w C++. Działanie tego
-wirusa polega na umieszczaniu w pliku napisów postaci #42@. Jednocześnie
+`#42@` atakujący m.in. kody źródłowe programów napisanych w C++. Działanie tego
+wirusa polega na umieszczaniu w pliku napisów postaci `#42@`. Jednocześnie
 w miejscu pojawienia się napisu może dojść do utraty danych - może zostać
 skasowana dowolna liczba znaków (wraz ze znakami nowego wiersza). Niestety
 awarii uległa kluczowa biblioteka programu - plik tst.h zawierający
 implementację trójkowych drzew wyszukiwań. Tak wygląda zainfekowany plik:
 
 *** Początek pliku ***
+```
 #42@
 #42@
 #42@
@@ -92,6 +93,7 @@ public:
 };
 
 #42@
+```
 ***  Koniec pliku  ***
 
 Twoim ostatnim zadaniem na tym kursie będzie uzupełnienie tej biblioteki
@@ -101,29 +103,33 @@ zgodnie z poniższymi wytycznymi.
   (ang. persistent data structure).
 * Wykorzystanie funkcji fold, rekurencji oraz funkcji lambda jest istotnym
   elementem rozwiązania.
-* Należy korzystać z tzw. "funkcyjnego if", tzn. ternarnego operatora ?: :
-    warunek_logiczny ? a() : b();
+* Należy korzystać z tzw. "funkcyjnego if", tzn. ternarnego operatora `?:` :
+    `warunek_logiczny ? a() : b();`
 * Konstrukcji:
+    ```
     if (warunek_logiczny) {
       /* ... */
     }
+    ```
   można w rozwiązaniu użyć tylko jeden raz. Nie można natomiast korzystać
   z konstrukcji:
+    ```
     if (warunek_logiczny) {
       /* ... */
     } else {
       /* ... */
     }
-* Wraz z treścią zadania dostępne są pliki tst_test1.cc oraz tst_test1.out jako
-  przykład użycia biblioteki tst.h. Plik tst_test1.cc po skompilowaniu
+    ```
+* Wraz z treścią zadania dostępne są pliki `tst_test1.cc` oraz `tst_test1.out` jako
+  przykład użycia biblioteki `tst.h`. Plik `tst_test1.cc` po skompilowaniu
   i uruchomieniu powinien wypisywać wszystkie swoje komunikaty na standardowe
   wyjście. Zawartość tych komunikatów powinna być zgodna z zawartością pliku
-  tst_test1.out.
+  `tst_test1.out`.
 
 Program będzie kompilowany na maszynie students poleceniem:
-  g++ -Wall -Wextra -pedantic -O3 -std=c++17 tst_testn.cc
+  `g++ -Wall -Wextra -pedantic -O3 -std=c++17 tst_testn.cc`
 gdzie tst_testn.cc jest n-tym testem. Każdy test będzie zawierał wiersz:
-  #include "tst.h"
+  `#include "tst.h"`
 
 Jako rozwiązanie należy dostarczyć plik tst.h, który należy umieścić
 w repozytorium w katalogu
